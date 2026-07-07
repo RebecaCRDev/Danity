@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mejora tu físico y tu salud con planes de nutrición y entrenamiento personalizados. Entrenamientos en casa o en gimnasio, adaptados a ti."
+    />
+    <meta
+      property="og:title"
+      content="Danity.fit | Entrenamiento y nutrición personalizados"
+    />
+    <meta
+      property="og:description"
+      content="Planes de nutrición y entrenamiento adaptados a ti. Mejora tu físico y tu salud con Danity.fit"
+    />
+    <!-- ✅ FIX 5: og:image apuntaba a assets/img/hero.jpg (no existe) -->
+    <meta property="og:image" content="assets/css/img/4.1.jpeg" />
+    <meta property="og:type" content="website" />
+    <title>Danity.fit | Entrenamiento y Nutrición Personalizados</title>
+    <!-- ✅ Favicon sin necesidad de archivo -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">Danity.fit</a>
+        <button
+          class="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <!-- ✅ FIX 3: un <ul> solo puede contener <li> -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html" class="btn-cta">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-scroll" aria-label="Hero principal">
+        <div class="hero-content">
+          <h1>
+            Mejora tu físico y tu salud con planes de nutrición y entrenamiento
+            personalizados
+          </h1>
+          <p>
+            Programas diseñados para ti, ya sea en casa o en el gimnasio.
+            Empieza hoy tu transformación con Danity.fit.
+          </p>
+          <a href="contacto.html" class="btn-primary"
+            >Solicita tu plan personalizado</a
+          >
+        </div>
+        <img
+          src="assets/css/img/4.1.jpeg"
+          alt="Entrenador personal Danity.fit"
+          class="hero-img"
+        />
+      </section>
+
+      <section class="beneficios" id="beneficios">
+        <h2>Beneficios</h2>
+        <div class="beneficios-grid">
+          <article>
+            <h3>Plan adaptado a ti</h3>
+            <p>
+              Recibe un programa hecho según tu nivel, objetivos y tiempo
+              disponible.
+            </p>
+          </article>
+          <article>
+            <h3>Entrenamiento en casa o gimnasio</h3>
+            <p>
+              Elige tu entorno preferido. Maximiza resultados sin perder
+              flexibilidad.
+            </p>
+          </article>
+          <article>
+            <h3>Nutrición flexible</h3>
+            <p>
+              Monitorea tus avances con herramientas simples y seguimiento
+              continuo.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="servicios" id="servicios">
+        <h2>Servicios destacados</h2>
+        <!-- ✅ FIX 5: las 4 imágenes apuntaban a assets/img/... (carpeta que no existe).
+           Ahora usan las mismas imágenes reales que servicios.html (1b–1e). -->
+        <div class="servicios-grid">
+          <article>
+            <img
+              src="assets/css/img/1b.jpg"
+              alt="Plan de nutrición personalizado"
+              loading="lazy"
+            />
+            <h3>Plan de Nutrición</h3>
+            <p>
+              Diseñado según tus objetivos, gustos y necesidades energéticas.
+            </p>
+          </article>
+          <article>
+            <img
+              src="assets/css/img/1c.jpg"
+              alt="Asesoría online Danity.fit"
+              loading="lazy"
+            />
+            <h3>Asesoría Online</h3>
+            <p>
+              Comunicación constante, seguimiento y ajustes para mantener tu
+              progreso.
+            </p>
+          </article>
+          <article>
+            <img
+              src="assets/css/img/1d.jpg"
+              alt="Entrenamiento en casa"
+              loading="lazy"
+            />
+            <h3>Entrenamiento en Casa</h3>
+            <p>
+              Rutinas efectivas con o sin equipamiento, adaptadas a tu espacio.
+            </p>
+          </article>
+          <article>
+            <img
+              src="assets/css/img/1e.jpg"
+              alt="Entrenamiento en gimnasio"
+              loading="lazy"
+            />
+            <h3>Entrenamiento en Gimnasio</h3>
+            <p>Programas estructurados para fuerza, rendimiento y estética.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="galeria" id="galeria">
+        <h2>Galería de resultados</h2>
+        <div class="swiper mySwiper" aria-label="Carrusel de resultados">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                loading="eager"
+                src="assets/css/img/a.jpg"
+                alt="Progreso físico 1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                loading="lazy"
+                src="assets/css/img/b.jpg"
+                alt="Progreso físico 2"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                loading="lazy"
+                src="assets/css/img/c.jpg"
+                alt="Progreso físico 3"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                loading="lazy"
+                src="assets/css/img/d.jpg"
+                alt="Progreso físico 4"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                loading="lazy"
+                src="assets/css/img/e.jpg"
+                alt="Progreso físico 5"
+              />
+            </div>
+          </div>
+          <div class="swiper-button-next" aria-label="Siguiente"></div>
+          <div class="swiper-button-prev" aria-label="Anterior"></div>
+        </div>
+      </section>
+
+      <!-- ✅ Testimonios REALES (con consentimiento de las clientas).
+         Sustituyen a los inventados (Laura M., Carlos R., María P.) -->
+      <section class="testimonios" id="testimonios">
+        <h2>Lo que dicen mis clientes</h2>
+        <p class="testimonios-intro">
+          Mensajes reales de personas en asesoría. Sin filtros, sin guion.
+        </p>
+
+        <div class="testimonios-grid">
+          <article>
+            <p>
+              “Tenía esos pantalones de hace un mes o más para estrenar pero no
+              me terminaban de gustar del todo como me quedaban, y ahora me
+              quedan perfectos. Te lo juro, ahora mismo estoy súper contenta.”
+            </p>
+            <h4>Clienta · Asesoría online</h4>
+          </article>
+
+          <article>
+            <p>
+              “Es la primera semana en años que me siento a gusto entrenando con
+              top en el gimnasio, siempre tendía a taparme más. Esta semana me
+              he sentido cómoda con lo que veía en el espejo.”
+            </p>
+            <h4>Clienta · Asesoría online</h4>
+          </article>
+
+          <article>
+            <p>
+              “Flipas: dos vueltas casi el cinturón, de unos vaqueros que apenas
+              me abrochaban el año pasado.”
+            </p>
+            <h4>Cliente · Asesoría online</h4>
+          </article>
+
+          <article>
+            <p>
+              “Me siento muchísimo mejor. No tengo esa ansiedad de antes de
+              querer buscar comida o de comer, controlo mucho más que antes y
+              mentalmente estoy más fuerte que cuando comencé con la asesoría.”
+            </p>
+            <h4>Clienta · Plan de nutrición</h4>
+          </article>
+
+          <article>
+            <p>
+              “Estoy muy contenta, eh Dani. Solo llevamos 3 semanas y ya me noto
+              cambios a nivel físico, no solo en la báscula sino en el espejo.”
+            </p>
+            <h4>Clienta · 3 semanas de programa</h4>
+          </article>
+
+          <article>
+            <p>
+              “He perdido la vergüenza a quitarme la camiseta. Parece una
+              tontería, pero no me veía bien y lo evitaba. Y ahora me la quito y
+              digo: aquí ya va habiendo algo.”
+            </p>
+            <h4>Cliente · Asesoría online</h4>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-final" id="cta">
+        <h2>Transforma tu cuerpo y tu mente</h2>
+        <p>
+          Solicita hoy tu plan personalizado y empieza a sentirte mejor contigo
+          mismo.
+        </p>
+        <a href="contacto.html" class="btn-primary">Comenzar ahora</a>
+      </section>
+    </main>
+
+    <!-- ✅ FIX 2: antes había "<<footer>" (HTML inválido) -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Danity.fit</a>
+        </div>
+
+        <nav class="footer-nav" aria-label="Menú del sitio">
+          <h3>Menú</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-social">
+          <h3>Sígueme</h3>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://www.instagram.com/danity.fit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/search?q=danity.fit&t=1762268795004"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                >TikTok</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:contacto@danity.fit">contacto@danity.fit</a>
+          </p>
+          <p><strong>Ubicación:</strong> Valencia, España</p>
+          <a class="footer-mini-cta" href="contacto.html">Solicitar plan</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Danity.fit | Entrenamiento y Nutrición Personalizados</p>
+      </div>
+    </footer>
+
+    <!-- ✅ LIGHTBOX (clic para ampliar imagen) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-close></div>
+      <div
+        class="lightbox__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Vista ampliada de imagen"
+      >
+        <button
+          class="lightbox__close"
+          type="button"
+          aria-label="Cerrar"
+          data-close
+        >
+          ×
+        </button>
+        <img class="lightbox__img" id="lightboxImg" alt="" />
+        <p class="lightbox__caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

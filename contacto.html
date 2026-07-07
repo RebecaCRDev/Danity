@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Solicita tu plan personalizado con Danity.fit. Cuéntame tus objetivos y te responderé con la mejor estrategia de nutrición y entrenamiento."
+    />
+    <meta property="og:title" content="Contacto | Danity.fit" />
+    <meta
+      property="og:description"
+      content="Formulario de aplicación para planes personalizados de nutrición y entrenamiento."
+    />
+    <!-- ✅ FIX 5: ruta unificada a la carpeta real -->
+    <meta property="og:image" content="assets/css/img/1f.jpg" />
+    <meta property="og:type" content="website" />
+    <title>Contacto | Danity.fit</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">Danity.fit</a>
+        <button
+          class="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <!-- ✅ FIX 3: enlaces dentro de <li> -->
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html" class="btn-cta active">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-scroll" aria-label="Contacto">
+        <div class="hero-content">
+          <h1>Solicita tu plan personalizado</h1>
+          <p>
+            Rellena esta aplicación y te responderé con la mejor estrategia para
+            tu objetivo. Sin dietas extremas, sin humo: método, constancia y
+            resultados.
+          </p>
+          <a href="#formulario" class="btn-primary">Ir al formulario</a>
+        </div>
+        <img
+          src="assets/css/img/1f.jpg"
+          alt="Contacto Danity.fit"
+          class="hero-img"
+        />
+      </section>
+
+      <section
+        class="contacto-page"
+        id="formulario"
+        aria-label="Formulario de contacto"
+      >
+        <h2>Formulario de aplicación</h2>
+        <p class="contacto-subtitle">
+          Cuanta más información me des, más preciso será el plan. Tus datos se
+          usan únicamente para responderte.
+        </p>
+
+        <!-- ✅ ENVÍO SIN BACKEND (FormSubmit)
+           ⚠️ FIX 7: tras el primer envío, FormSubmit te mandará un email de
+           activación con un endpoint tipo formsubmit.co/a1b2c3d4...
+           SUSTITUYE el email de abajo por ese código hasheado para no
+           exponer tu correo real en el HTML. -->
+        <form
+          class="contacto-form"
+          id="contactForm"
+          action="https://formsubmit.co/acebercr9815@gmail.com"
+          method="POST"
+          novalidate
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nueva solicitud - Danity.fit"
+          />
+          <!-- ✅ FIX: captcha activado. Con _captcha=false + solo honeypot
+             te acabaría llegando spam. -->
+          <input type="hidden" name="_captcha" value="true" />
+          <!-- ⚠️ FIX 7: FormSubmit exige URL ABSOLUTA en _next.
+             En local no funciona; cuando despliegues, pon la URL completa,
+             p. ej. https://rebecacrdev.github.io/danity/gracias.html -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://TU-DOMINIO.com/gracias.html"
+          />
+          <!-- Honeypot anti-spam -->
+          <input
+            type="text"
+            name="_honey"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <!-- Nombre -->
+          <div class="field">
+            <label for="nombre">Nombre y apellidos</label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              placeholder="Ej: Daniel Pérez"
+              autocomplete="name"
+              required
+            />
+            <small class="error" id="error-nombre" aria-live="polite"></small>
+          </div>
+
+          <!-- Edad -->
+          <div class="field">
+            <label for="edad">Edad</label>
+            <input
+              id="edad"
+              name="edad"
+              type="number"
+              min="14"
+              max="90"
+              placeholder="Ej: 28"
+              required
+            />
+            <small class="error" id="error-edad" aria-live="polite"></small>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Ej: tuemail@gmail.com"
+              autocomplete="email"
+              required
+            />
+            <small class="error" id="error-email" aria-live="polite"></small>
+          </div>
+
+          <!-- Objetivos -->
+          <div class="field field-full">
+            <label for="objetivos">Objetivo principal</label>
+            <select id="objetivos" name="objetivos" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="perder-grasa">Perder grasa</option>
+              <option value="ganar-musculo">Ganar músculo</option>
+              <option value="recomposicion">Recomposición corporal</option>
+              <option value="rendimiento">Rendimiento / fuerza</option>
+              <option value="salud">Salud / hábitos</option>
+            </select>
+            <small
+              class="error"
+              id="error-objetivos"
+              aria-live="polite"
+            ></small>
+          </div>
+
+          <!-- Experiencia -->
+          <div class="field field-full">
+            <label for="experiencia">Experiencia previa</label>
+            <textarea
+              id="experiencia"
+              name="experiencia"
+              rows="4"
+              placeholder="Cuéntame si has entrenado antes, lesiones, qué has probado, etc."
+              required
+            ></textarea>
+            <small
+              class="error"
+              id="error-experiencia"
+              aria-live="polite"
+            ></small>
+          </div>
+
+          <!-- Disponibilidad -->
+          <div class="field field-full">
+            <label for="disponibilidad">Disponibilidad (tiempo/semana)</label>
+            <select id="disponibilidad" name="disponibilidad" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="2-3">2–3 días/semana</option>
+              <option value="3-4">3–4 días/semana</option>
+              <option value="4-5">4–5 días/semana</option>
+              <option value="5-6">5–6 días/semana</option>
+            </select>
+            <small
+              class="error"
+              id="error-disponibilidad"
+              aria-live="polite"
+            ></small>
+          </div>
+
+          <!-- Entrenamiento (opcional: por eso no lleva mensaje de error) -->
+          <fieldset class="field field-full">
+            <legend>¿Dónde quieres entrenar?</legend>
+            <div class="checks">
+              <label class="check">
+                <input type="checkbox" name="lugar" value="casa" />
+                <span>En casa</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" name="lugar" value="gimnasio" />
+                <span>En gimnasio</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" name="lugar" value="mixto" />
+                <span>Mixto</span>
+              </label>
+            </div>
+            <small class="hint">Puedes seleccionar varias opciones.</small>
+          </fieldset>
+
+          <!-- Consent -->
+          <div class="field field-full consent">
+            <label class="check">
+              <input
+                id="privacidad"
+                name="privacidad"
+                type="checkbox"
+                required
+              />
+              <span
+                >Acepto la política de privacidad y el tratamiento de mis datos
+                para responder a mi solicitud.</span
+              >
+            </label>
+            <small
+              class="error"
+              id="error-privacidad"
+              aria-live="polite"
+            ></small>
+          </div>
+
+          <!-- CTA -->
+          <div class="field field-full">
+            <button class="btn-primary btn-submit" id="submitBtn" type="submit">
+              Enviar solicitud
+            </button>
+            <p class="form-note">Respuesta habitual en 24–48h laborables.</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="cta-final">
+        <h2>Tu cambio empieza con un primer paso</h2>
+        <p>Si estás listo/a para hacerlo bien, aquí estoy para guiarte.</p>
+        <a href="#formulario" class="btn-primary">Rellenar formulario</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Danity.fit</a>
+        </div>
+
+        <nav class="footer-nav" aria-label="Menú del sitio">
+          <h3>Menú</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-social">
+          <h3>Sígueme</h3>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://www.instagram.com/danity.fit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/search?q=danity.fit&t=1762268795004"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                >TikTok</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:contacto@danity.fit">contacto@danity.fit</a>
+          </p>
+          <p><strong>Ubicación:</strong> Valencia, España</p>
+          <a class="footer-mini-cta" href="contacto.html">Solicitar plan</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Danity.fit | Entrenamiento y Nutrición Personalizados</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

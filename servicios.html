@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conoce los servicios de Danity.fit: planes de nutrición, asesorías online, entrenamientos en casa y en gimnasio, adaptados a ti."
+    />
+    <meta property="og:title" content="Servicios | Danity.fit" />
+    <meta
+      property="og:description"
+      content="Entrenamiento y nutrición personalizados para alcanzar tus objetivos de forma sostenible."
+    />
+    <!-- ✅ FIX 5: ruta unificada a la carpeta real -->
+    <meta property="og:image" content="assets/css/img/1a.jpg" />
+    <meta property="og:type" content="website" />
+    <title>Servicios | Danity.fit</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">Danity.fit</a>
+        <button
+          class="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <!-- ✅ FIX 3: enlaces dentro de <li> -->
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="servicios.html" class="active">Servicios</a></li>
+          <li><a href="contacto.html" class="btn-cta">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO (mismo sistema que index) -->
+      <section class="hero-scroll" aria-label="Servicios">
+        <div class="hero-content">
+          <h1>Entrenamiento y nutrición adaptados a tu estilo de vida</h1>
+          <p>
+            Descubre el plan que mejor se adapta a ti. En casa, online o en el
+            gimnasio, logra resultados reales y sostenibles.
+          </p>
+          <a href="contacto.html" class="btn-primary">Solicitar mi plan</a>
+        </div>
+        <img
+          src="assets/css/img/1a.jpg"
+          alt="Entrenamientos personalizados Danity.fit"
+          class="hero-img"
+        />
+      </section>
+
+      <!-- SERVICIOS -->
+      <section class="servicios-page" aria-label="Listado de servicios">
+        <h2>Servicios</h2>
+
+        <article class="servicio-card">
+          <div class="servicio-media">
+            <img
+              src="assets/css/img/1b.jpg"
+              alt="Plan de Nutrición Personalizado"
+              loading="lazy"
+            />
+          </div>
+          <div class="servicio-texto">
+            <h3>Plan de Nutrición</h3>
+            <p>
+              Diseñado para mejorar tu rendimiento, salud y composición corporal
+              sin dietas restrictivas. Aprende a comer de forma flexible
+              mientras disfrutas el proceso.
+            </p>
+            <ul class="servicio-lista">
+              <li>Evaluación de hábitos y necesidades energéticas.</li>
+              <li>Plan alimenticio flexible según tus gustos.</li>
+              <li>Educación nutricional para mantener resultados.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="servicio-card reverse">
+          <div class="servicio-media">
+            <img
+              src="assets/css/img/1c.jpg"
+              alt="Asesoría Online Danity.fit"
+              loading="lazy"
+            />
+          </div>
+          <div class="servicio-texto">
+            <h3>Asesoría Online</h3>
+            <p>
+              Acompañamiento continuo con comunicación directa. Entrena y
+              aliméntate con estructura, seguimiento y motivación sin importar
+              dónde estés.
+            </p>
+            <ul class="servicio-lista">
+              <li>Seguimiento semanal y ajustes personalizados.</li>
+              <li>Feedback directo y soporte constante.</li>
+              <li>Acceso a material educativo exclusivo.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="servicio-card">
+          <div class="servicio-media">
+            <img
+              src="assets/css/img/1d.jpg"
+              alt="Entrenamiento en Casa"
+              loading="lazy"
+            />
+          </div>
+          <div class="servicio-texto">
+            <h3>Entrenamiento en Casa</h3>
+            <p>
+              Entrena con eficacia y sin complicaciones desde la comodidad de tu
+              hogar. Programas que se adaptan a tu nivel, equipamiento y tiempo
+              disponible.
+            </p>
+            <ul class="servicio-lista">
+              <li>Rutinas progresivas con o sin material.</li>
+              <li>Videos de apoyo y ejecución correcta.</li>
+              <li>Plan de seguimiento de avances.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="servicio-card reverse">
+          <div class="servicio-media">
+            <img
+              src="assets/css/img/1e.jpg"
+              alt="Entrenamiento en Gimnasio"
+              loading="lazy"
+            />
+          </div>
+          <div class="servicio-texto">
+            <h3>Entrenamiento en Gimnasio</h3>
+            <p>
+              Optimiza tu rendimiento y lleva tu cuerpo al siguiente nivel con
+              programas de fuerza, hipertrofia o recomposición corporal
+              adaptados a ti.
+            </p>
+            <ul class="servicio-lista">
+              <li>Planificación estructurada por fases.</li>
+              <li>Corrección técnica y progresión segura.</li>
+              <li>Enfoque en resultados medibles.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faqs" aria-label="Preguntas frecuentes">
+        <h2>Preguntas Frecuentes</h2>
+
+        <div class="faq-item">
+          <h3>¿Necesito experiencia previa para empezar?</h3>
+          <p>
+            No. Todos los planes están adaptados a tu nivel actual y evolucionan
+            contigo.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>¿Puedo combinar entrenamiento en casa y gimnasio?</h3>
+          <p>
+            Sí. Los programas son totalmente flexibles y pueden alternarse según
+            tu disponibilidad.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>¿Cómo se realiza el seguimiento?</h3>
+          <p>
+            A través de comunicación directa y reportes de progreso semanales,
+            con ajustes según tus resultados.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-final">
+        <h2>Da el paso hoy</h2>
+        <p>Empieza tu transformación con un plan diseñado solo para ti.</p>
+        <a href="contacto.html" class="btn-primary">Solicitar mi plan</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Danity.fit</a>
+        </div>
+
+        <nav class="footer-nav" aria-label="Menú del sitio">
+          <h3>Menú</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-social">
+          <h3>Sígueme</h3>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://www.instagram.com/danity.fit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/search?q=danity.fit&t=1762268795004"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                >TikTok</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:contacto@danity.fit">contacto@danity.fit</a>
+          </p>
+          <p><strong>Ubicación:</strong> Valencia, España</p>
+          <a class="footer-mini-cta" href="contacto.html">Solicitar plan</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Danity.fit | Entrenamiento y Nutrición Personalizados</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
