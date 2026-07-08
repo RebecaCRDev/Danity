@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const swiperRoot = document.querySelector(".mySwiper");
 
   if (swiperRoot && typeof Swiper !== "undefined") {
-    new Swiper(".mySwiper", {
+    const galeriaSwiper = new Swiper(".mySwiper", {
       loop: true,
       centeredSlides: true,
       slidesPerView: "auto",
@@ -65,9 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
       slideToClickedSlide: true,
       speed: 700,
 
+      // ✅ Selectores SCOPEADOS: al haber dos swipers en la página,
+      // '.swiper-button-next' a secas es ambiguo
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".mySwiper .swiper-button-next",
+        prevEl: ".mySwiper .swiper-button-prev",
       },
 
       effect: "coverflow",
@@ -84,6 +86,61 @@ document.addEventListener("DOMContentLoaded", () => {
       observer: true,
       observeParents: true,
       updateOnWindowResize: true,
+    });
+
+    // ✅ FIX galería invisible: con slides de ancho automático (width:auto)
+    // y fotos lazy, Swiper se inicializa cuando las imágenes miden 0px.
+    // Recalculamos el layout cada vez que una foto termina de cargar.
+    swiperRoot.querySelectorAll("img").forEach((img) => {
+      if (img.complete) return;
+      img.addEventListener("load", () => galeriaSwiper.update());
+      img.addEventListener("error", () => galeriaSwiper.update());
+    });
+  }
+
+  // =========================================================
+  // ✅ TESTIMONIOS — slider plano con autoplay suave
+  // (deliberadamente distinto al cilindro de la galería)
+  // =========================================================
+  const testimoniosRoot = document.querySelector(".testimoniosSwiper");
+
+  if (testimoniosRoot && typeof Swiper !== "undefined") {
+    const prefiereMenosMovimiento = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    new Swiper(".testimoniosSwiper", {
+      // ✅ rewind en vez de loop: con 6 testimonios y 3 visibles,
+      // el modo loop no tiene slides suficientes (warning en consola).
+      // rewind vuelve al principio al llegar al final, sin clonar slides.
+      rewind: true,
+      speed: 600,
+      spaceBetween: 24,
+      slidesPerView: 1,
+      breakpoints: {
+        700: { slidesPerView: 2 },
+        1100: { slidesPerView: 3 },
+      },
+      // Autoplay lento; se desactiva si el usuario pide menos movimiento
+      autoplay: prefiereMenosMovimiento
+        ? false
+        : {
+            delay: 4500,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+          },
+      // ✅ Flechas propias (scopeadas para no chocar con las de la galería)
+      navigation: {
+        nextEl: ".testimoniosSwiper .swiper-button-next",
+        prevEl: ".testimoniosSwiper .swiper-button-prev",
+      },
+      pagination: {
+        el: ".testimonios .swiper-pagination",
+        clickable: true,
+      },
+      grabCursor: true,
+      observer: true,
+      observeParents: true,
     });
   }
 

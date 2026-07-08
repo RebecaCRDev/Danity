@@ -335,16 +335,20 @@ h2 {
 }
 
 .galeria .swiper-slide {
-  width: clamp(220px, 36vw, 320px);
+  /* ✅ Ancho variable: cada slide toma el ancho natural de su foto */
+  width: auto;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   will-change: transform;
 }
 
 .galeria .swiper-slide img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  /* ✅ Altura común; el ancho lo decide la proporción de cada foto.
+     Así los antes/después apaisados se ven ENTEROS, sin recorte. */
+  height: clamp(280px, 48vh, 440px);
+  width: auto;
+  max-width: min(86vw, 640px);
+  object-fit: contain;
   display: block;
   border-radius: 16px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
@@ -387,30 +391,9 @@ h2 {
   z-index: 3;
 }
 
-/* === TESTIMONIOS === */
+/* === TESTIMONIOS (slider Swiper plano, sereno) === */
 .testimonios {
   background-color: var(--color-bg);
-}
-
-.testimonios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.testimonios-grid article {
-  background-color: var(--color-bg-soft);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  font-style: italic;
-}
-
-.testimonios-grid h4 {
-  color: var(--color-primary);
-  margin-top: 1rem;
-  font-weight: 600;
 }
 
 .testimonios-intro {
@@ -418,6 +401,69 @@ h2 {
   max-width: 640px;
   margin: -1.4rem auto 2.2rem;
   color: rgba(45, 31, 27, 0.75);
+}
+
+.testimonios .swiper {
+  padding: 0.4rem 3rem 2.8rem; /* hueco inferior para paginación y lateral para flechas */
+}
+
+/* Flechas de testimonios: discretas, redondas, sin tapar el texto */
+.testimonios .swiper-button-prev,
+.testimonios .swiper-button-next {
+  color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  top: 50%;
+}
+
+.testimonios .swiper-button-prev {
+  left: 0;
+}
+.testimonios .swiper-button-next {
+  right: 0;
+}
+
+.testimonios .swiper-button-prev::after,
+.testimonios .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.testimonios .swiper-slide {
+  height: auto; /* todas las tarjetas de la fila, misma altura */
+  display: flex;
+}
+
+.testimonios .swiper-slide article {
+  background-color: var(--color-bg-soft);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-style: italic;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* la firma queda abajo aunque la cita sea corta */
+}
+
+.testimonios .swiper-slide h4 {
+  color: var(--color-primary);
+  margin-top: 1rem;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.testimonios .swiper-pagination-bullet {
+  background: rgba(45, 31, 27, 0.35);
+  opacity: 1;
+}
+
+.testimonios .swiper-pagination-bullet-active {
+  background: var(--color-primary);
 }
 
 /* === CTA FINAL === */
